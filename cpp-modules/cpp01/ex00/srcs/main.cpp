@@ -5,33 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 13:21:30 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/16 15:37:59 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/07/16 19:09:42 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/07/16 19:32:29 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "./class/PhoneBook.hpp"
+#include "./class/Zombie.hpp"
 
 int main(void)
 {
-	char		*command;
-	PhoneBook	PhoneBook;
+	Zombie *zomb1;
+	Zombie *zomb2;
 
-	while (1)
-	{
-		std::cout << "> ";
-		std::cin >> command;
-		if (!std::strcmp(command, "ADD"))
-			PhoneBook.addContact();
-		else if (!std::strcmp(command, "SEARCH"))
-			PhoneBook.searchContact();
-		else if (!std::strcmp(command, "EXIT"))
-			break;
-		else
-			std::cout << "Unknown command" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	}
+	zomb1 = newZombie("mr Georges");
+	zomb2 = newZombie("Operator");
+
+	std::cout << std::endl;
+
+	randomChump("Bob");
+
+	std::cout << std::endl;
+
+	randomChump("Blooper");
+
+	std::cout << std::endl;
+
+	zomb1->annonce();
+	zomb2->annonce();
+
+	std::cout << std::endl;
+	
+	delete zomb1;
+	delete zomb2;
 	return (0);
 }

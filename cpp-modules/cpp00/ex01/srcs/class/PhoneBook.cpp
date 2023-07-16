@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 12:36:58 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/15 18:43:28 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/16 15:20:01 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,12 @@ void PhoneBook::printContacts(void)
 		size_of_nc = this->contacts[i].getNickName().length();
 		if (!size_of_fn && !size_of_ln && !size_of_nc)
 			break;
-
 		std::cout << "|";
-
-		for (int j = 0; j <= 10 - size_of_index; j++)
+		for (int j = 0; j < (int)(10 - size_of_index); j++)
 			std::cout << " ";
-		std::cout << i;
-
+		std::cout << i + 1;
 		std::cout << "|";
-		for (int j = 0; j <= 10 - size_of_fn; j++)
+		for (int j = 0; j < (int)(10 - size_of_fn); j++)
 			std::cout << " ";
 		for (int j = 0; j < 9 && j < size_of_fn; j++)
 			std::cout << this->contacts[i].getFirstName()[j];
@@ -83,9 +80,8 @@ void PhoneBook::printContacts(void)
 			std::cout << ".";
 		else
 			std::cout << this->contacts[i].getFirstName()[9];
-		
 		std::cout << "|";
-		for (int j = 0; j <= 10 - size_of_ln; j++)
+		for (int j = 0; j < (int)(10 - size_of_ln); j++)
 			std::cout << " ";
 		for (int j = 0; j < 9 && j < size_of_ln; j++)
 			std::cout << this->contacts[i].getLastName()[j];
@@ -93,9 +89,8 @@ void PhoneBook::printContacts(void)
 			std::cout << ".";
 		else
 			std::cout << this->contacts[i].getLastName()[9];
-				
 		std::cout << "|";
-		for (int j = 0; j <= 10 - size_of_nc; j++)
+		for (int j = 0; j < (int)(10 - size_of_nc); j++)
 			std::cout << " ";
 		for (int j = 0; j < 9 && j < size_of_nc; j++)
 			std::cout << this->contacts[i].getNickName()[j];
@@ -104,8 +99,6 @@ void PhoneBook::printContacts(void)
 		else
 			std::cout << this->contacts[i].getNickName()[9];
 		std::cout << "|" << std::endl;
-	std::cout << "HERE " << i << std::endl;
-		// break;
 	}
 	std::cout << std::endl;
 }
@@ -132,16 +125,23 @@ void PhoneBook::printSpecifiedContact(int index)
 
 void PhoneBook::searchContact(void)
 {
-	int index = -1;
+	int			index = -1;
 
 	PhoneBook::printContacts();
-	while (index < 0 || index > 7)
+
+	std::cout << "Enter the id of the contact: ";
+
+	if (!(std::cin >> index) || index < 1 || index > 8)
 	{
-		std::cout << "Enter the id of the contact: ";
-		std::cin >> index;
-		if (index < 0 || index > 7)
-			std::cout << "Wrong id, try something between 0 and 7" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Wrong id, try something between 1 and 8" << std::endl;
 	}
-	PhoneBook::printSpecifiedContact(index);
-	std::cout << std::endl;
+
+	if (index >= 1 && index <= 8)
+	{
+		index--;
+		PhoneBook::printSpecifiedContact(index);
+		std::cout << std::endl;
+	}
 }
