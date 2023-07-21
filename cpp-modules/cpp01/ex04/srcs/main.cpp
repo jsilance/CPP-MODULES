@@ -5,31 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 19:43:30 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/21 18:47:20 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/07/21 18:52:39 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/07/21 19:25:22 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./class/Weapon.hpp"
-#include "./class/HumanA.hpp"
-#include "./class/HumanB.hpp"
+#include <fstream>
+#include <iostream>
 
-int main()
+int main(int ac, char **ag)
 {
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+	std::string line;
+	std::string infile;
+	std::string outfile;
+
+	if (ac != 4)
+		return (1);
+	
+	infile = ag[1];
+	outfile = infile;
+	outfile.append(".replace");
+
+	std::ifstream ifs(infile);
+	std::ofstream ofs(outfile);
+
+	while (std::getline(ifs, line))
+		ofs << line << std::endl;
+	ifs.close();
+	ofs.close();
+	return (0);
 }

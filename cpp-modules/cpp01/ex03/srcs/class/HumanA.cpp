@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 19:33:06 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/21 15:14:37 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/07/21 14:07:09 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/07/21 18:45:06 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanA.hpp"
 
-Weapon::Weapon(std::string weapon): type(weapon)
+HumanA::HumanA(std::string name, Weapon& weapon): name(name), weapon(weapon)
 {
 	return ;
 }
 
-Weapon::~Weapon(void)
+HumanA::~HumanA(void)
 {
 	return ;
 }
 
-std::string& Weapon::getType(void)
+void HumanA::setName(std::string name)
 {
-	return (this->type);
+	this->name = name;
 }
 
-void Weapon::setType(const std::string& newType)
+std::string HumanA::getName(void)
 {
-	this->type = newType;
+	return (this->name);
+}
+
+void HumanA::attack(void) const
+{
+	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+}
+
+Weapon &HumanA::getWeapon(void) const
+{
+	return (this->weapon);
 }

@@ -6,7 +6,7 @@ NAME		= NoViolence
 
 SRCS		= main.cpp \
 
-CLASS		= Weapon.cpp \
+CLASS		= Weapon.cpp HumanA.cpp HumanB.cpp \
 
 # ============================================================================= #
 
@@ -28,7 +28,7 @@ LDFLAGS		=
 
 CC			= c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 RM			= rm -f
 
