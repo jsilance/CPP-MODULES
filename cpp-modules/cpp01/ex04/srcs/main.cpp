@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:52:39 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/26 19:24:19 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/26 19:42:21 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int main(int ac, char **ag)
 	std::string infile;
 	std::string outfile;
 	std::string str_to_replace;
-	std::string str_replace;
 	int j = 0;
 
 	if (ac != 4)
@@ -27,7 +26,6 @@ int main(int ac, char **ag)
 	
 	infile = ag[1];
 	str_to_replace = std::string(ag[2]);
-	str_replace = std::string(ag[3]);
 
 	outfile = infile;
 	outfile.append(".replace");
@@ -46,7 +44,7 @@ int main(int ac, char **ag)
 					j++;
 				if (j == str_to_replace.size())
 				{
-					ofs << str_replace;
+					ofs << ag[3];
 					i += j;
 				}
 				else
