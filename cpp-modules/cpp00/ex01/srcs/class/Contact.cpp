@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 12:50:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/15 16:05:53 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:54:18 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,110 +24,110 @@ Contact::~Contact(void)
 
 void Contact::setFirstName(std::string firstName)
 {
-	this->firstName = firstName;
+	this->_firstName = firstName;
 }
 
 void Contact::setLastName(std::string lastName)
 {
-	this->lastName = lastName;
+	this->_lastName = lastName;
 }
 
 void Contact::setNickname(std::string nickname)
 {
-	this->nickname = nickname;
+	this->_nickname = nickname;
 }
 
 void Contact::setLogin(std::string login)
 {
-	this->login = login;
+	this->_login = login;
 }
 
 void Contact::setPostalAddress(std::string postalAddress)
 {
-	this->postalAddress = postalAddress;
+	this->_postalAddress = postalAddress;
 }
 
 void Contact::setEmailAddress(std::string emailAddress)
 {
-	this->emailAddress = emailAddress;
+	this->_emailAddress = emailAddress;
 }
 
 void Contact::setPhoneNumber(std::string phoneNumber)
 {
-	this->phoneNumber = phoneNumber;
+	this->_phoneNumber = phoneNumber;
 }
 
 void Contact::setBirthdayDate(std::string birthdayDate)
 {
-	this->birthdayDate = birthdayDate;
+	this->_birthdayDate = birthdayDate;
 }
 
 void Contact::setFavoriteMeal(std::string favoriteMeal)
 {
-	this->favoriteMeal = favoriteMeal;
+	this->_favoriteMeal = favoriteMeal;
 }
 
 void Contact::setUnderwearColor(std::string underwearColor)
 {
-	this->underwearColor = underwearColor;
+	this->_underwearColor = underwearColor;
 }
 
 void Contact::setDarkestSecret(std::string darkestSecret)
 {
-	this->darkestSecret = darkestSecret;
+	this->_darkestSecret = darkestSecret;
 }
 
 std::string	Contact::getFirstName(void) const
 {
-	return (this->firstName);
+	return (this->_firstName);
 }
 
 std::string	Contact::getLastName(void) const
 {
-	return (this->lastName);
+	return (this->_lastName);
 }
 
 std::string	Contact::getNickName(void) const
 {
-	return (this->nickname);
+	return (this->_nickname);
 }
 
 std::string	Contact::getLogin(void) const
 {
-	return (this->login);
+	return (this->_login);
 }
 
 std::string	Contact::getPostalAddress(void) const
 {
-	return (this->postalAddress);
+	return (this->_postalAddress);
 }
 
 std::string	Contact::getEmailAddress(void) const
 {
-	return (this->emailAddress);
+	return (this->_emailAddress);
 }
 
 std::string	Contact::getPhoneNumber(void) const
 {
-	return (this->phoneNumber);
+	return (this->_phoneNumber);
 }
 
 std::string	Contact::getBirthdayDate(void) const
 {
-	return (this->birthdayDate);
+	return (this->_birthdayDate);
 }
 
 std::string	Contact::getFavoriteMeal(void) const
 {
-	return (this->favoriteMeal);
+	return (this->_favoriteMeal);
 }
 
 std::string	Contact::getUnderwearColor(void) const
 {
-	return (this->underwearColor);
+	return (this->_underwearColor);
 }
 
 std::string	Contact::getDarkestSecret(void) const
 {
-	return (this->darkestSecret);
+	return (this->_darkestSecret);
 }

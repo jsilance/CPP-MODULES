@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 19:33:09 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/21 15:14:45 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:57:21 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Weapon
 		void setType(const std::string& type);
 
 	private:
-		std::string type;
+		std::string _type;
 };
 
 #endif

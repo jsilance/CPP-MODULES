@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 11:55:40 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/15 16:48:55 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:50:38 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class PhoneBook
 		void	searchContact(void);
 
 	private:
-		Contact	contacts[8];
-		int		nbContacts;
+		Contact	_contacts[8];
+		int		_nbContacts;
 
 		std::string getInput(std::string field) const;
 		void printContacts(void);

@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:06:59 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/20 19:35:10 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:54:51 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Zombie
 		std::string getZombieName(void);
 
 	private:
-		std::string	name;
+		std::string	_name;
 };
 
 Zombie *newZombie(std::string name);

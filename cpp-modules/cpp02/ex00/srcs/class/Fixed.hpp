@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/21 14:05:26 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/29 08:57:17 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/07/28 18:24:41 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/07/29 10:19:13 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+// #pragma once
 
-# include <iostream>
-# include "Weapon.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-class HumanB
+#include <iostream>
+
+class Fixed
 {
 	public:
-		HumanB(std::string name);
-		~HumanB();
+		Fixed(void);
+		Fixed(int nb);
+		Fixed(Fixed const &src);
+		~Fixed(void);
 
-		void attack(void) const;
+		Fixed &operator=(Fixed const &nb);
+
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 		
-		Weapon &getWeapon(void) const;
-		void setWeapon(Weapon &weapon);
-
 	private:
-		std::string _name;
-		Weapon *_weapon;
+		int	_val;
+		int const static _bits = 8;
 };
 
 #endif

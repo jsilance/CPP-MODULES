@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:05:26 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/21 16:16:35 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:57:10 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class HumanA
 		Weapon& getWeapon(void) const;
 
 	private:
-		std::string name;
-		Weapon &weapon;
+		std::string _name;
+		Weapon &_weapon;
 };
 
 #endif

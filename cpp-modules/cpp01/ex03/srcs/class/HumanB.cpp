@@ -6,13 +6,13 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:07:09 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/21 18:40:28 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:58:38 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): name(name), weapon(nullptr)
+HumanB::HumanB(std::string name): _name(name), _weapon(nullptr)
 {
 	return ;
 }
@@ -24,18 +24,18 @@ HumanB::~HumanB(void)
 
 void HumanB::attack(void) const
 {
-	if (this->weapon)
-		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+	if (this->_weapon)
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 	else
-		std::cout << this->name << " can't attack, he doesn't have weapon." << std::endl;
+		std::cout << this->_name << " can't attack, he doesn't have weapon." << std::endl;
 }
 
 void HumanB::setWeapon(Weapon& weapon)
 {
-	this->weapon = &weapon;
+	this->_weapon = &weapon;
 }
 
 Weapon& HumanB::getWeapon(void) const
 {
-	return (*this->weapon);
+	return (*this->_weapon);
 }
