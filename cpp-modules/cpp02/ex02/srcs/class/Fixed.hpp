@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:24:41 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/29 12:09:04 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:23:43 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@ class Fixed
 		~Fixed(void);
 
 		Fixed &operator=(Fixed const &nb);
+		Fixed operator+(Fixed const &nb) const;
+		Fixed operator-(Fixed const &nb) const;
+		Fixed operator*(Fixed const &nb) const;
+		Fixed operator/(Fixed const &nb) const;
+
+		Fixed operator++(int);
+		Fixed &operator++(void);
+		Fixed operator--(int);
+		Fixed &operator--(void);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);

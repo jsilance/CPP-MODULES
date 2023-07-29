@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:25:52 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/29 12:16:53 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:41:02 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,80 @@ Fixed::~Fixed(void)
 
 Fixed &Fixed::operator=(Fixed const &nb)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &nb)
 		this->_val = nb.getRawBits();
 	return (*this);
 }
 
+
+Fixed Fixed::operator+(Fixed const &nb) const
+{
+
+	Fixed newFixed;
+	
+	newFixed.setRawBits(this->getRawBits() + nb.getRawBits());
+	return (newFixed);
+}
+
+Fixed Fixed::operator-(Fixed const &nb) const
+{
+	Fixed newFixed;
+	
+	newFixed.setRawBits(this->getRawBits() - nb.getRawBits());
+
+	return (newFixed);
+}
+
+Fixed Fixed::operator/(Fixed const &nb) const
+{
+	Fixed newFixed(this->toFloat() / nb.toFloat());
+
+	return (newFixed);
+}
+
+Fixed Fixed::operator*(Fixed const &nb) const
+{
+	Fixed newFixed(this->toFloat() * nb.toFloat());
+
+	return (newFixed);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed newFixed(*this);
+
+	++(*this);
+	return (newFixed);
+}
+
+Fixed &Fixed::operator++(void)
+{
+	this->_val = this->_val + (1 << this->_bits);
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed newFixed(*this);
+
+	--(*this);
+	return (newFixed);
+}
+
+Fixed &Fixed::operator--(void)
+{
+		this->_val = this->_val - (1 << this->_bits);
+	return (*this);
+}
+
+
 int Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_val);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	// std::cout << "setRawBits member function called" << std::endl;
 	this->_val = raw;
 	return ;
 }
