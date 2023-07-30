@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:25:52 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/30 15:47:39 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/30 18:50:47 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Fixed::Fixed(void): _val(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(int const nb)
 {
 	this->_val = nb << this->_bits;
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	return ;
 }
 
@@ -29,7 +29,7 @@ Fixed::Fixed(float const nb)
 {
 	int power = 1;
 
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	for (int i = 0; i < this->_bits; i++)
 		power *= 2;
 	this->_val = nb * power;
@@ -38,14 +38,14 @@ Fixed::Fixed(float const nb)
 
 Fixed::Fixed(Fixed const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 	return ;
 }
 

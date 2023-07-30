@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:24:41 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/30 15:42:02 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/07/30 16:58:28 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class Fixed
 		int toInt(void) const;
 		
 	private:
-		int	_val;
+		mutable int	_val;
 		int const static _bits = 8;
 };
 
