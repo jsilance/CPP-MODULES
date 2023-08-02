@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 19:25:52 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/30 15:47:39 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:30:16 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ Fixed Fixed::operator++(int)
 
 Fixed &Fixed::operator++(void)
 {
-	this->_val = this->_val + (1 << this->_bits);
+	this->_val = this->_val + 1;
 	return (*this);
 }
 
@@ -168,7 +168,7 @@ Fixed Fixed::operator--(int)
 
 Fixed &Fixed::operator--(void)
 {
-		this->_val = this->_val - (1 << this->_bits);
+		this->_val = this->_val - 1;
 	return (*this);
 }
 
