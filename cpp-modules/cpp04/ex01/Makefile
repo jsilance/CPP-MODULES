@@ -1,12 +1,12 @@
 # ============================================================================= #
                                                       
-NAME		= Polymorphe
+NAME		= BabyDontBurnMe
 
 # ============================================================================= #
 
 SRCS		= main.cpp \
 
-CLASS		= Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp \
+CLASS		= Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp \
 
 # ============================================================================= #
 
