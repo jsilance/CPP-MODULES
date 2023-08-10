@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:25 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/09 00:17:31 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/09 01:38:32 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <iostream>
 
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
-		Cat();
-		Cat(Cat const & src);
-		virtual ~Cat();
+		WrongCat();
+		WrongCat(WrongCat const & src);
+		virtual ~WrongCat();
 
-		Cat &	operator=(Cat const & rhs);
+		WrongCat &operator=(WrongCat const & rhs);
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 		std::string		getType() const;
 };
 
