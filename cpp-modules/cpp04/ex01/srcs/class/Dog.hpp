@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:58 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 18:47:47 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:17:52 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -28,6 +29,8 @@ class Dog : public Animal
 
 		virtual void	makeSound() const;
 		std::string		getType() const;
+	private:
+		Brain	*_brain;
 };
 
 #endif

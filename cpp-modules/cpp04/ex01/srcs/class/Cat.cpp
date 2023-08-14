@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:03 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 18:46:24 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/11 01:17:40 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Cat::Cat()
 {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
+	this->_brain = new Brain();
 	return ;
 }
 
@@ -23,19 +24,24 @@ Cat::Cat(Cat const &src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
+	this->_brain = new Brain();
 	return ;
 }
 
 Cat::~Cat(void)
 {
 	std::cout << "Cat destructor called" << std::endl;
+	delete this->_brain;
 	return ;
 }
 
 Cat &Cat::operator=(Cat const &rhs)
 {
 	if (this != &rhs)
+	{
 		this->_type = rhs.getType();
+		// this->_brain = new Brain();
+	}
 	return (*this);
 }
 
