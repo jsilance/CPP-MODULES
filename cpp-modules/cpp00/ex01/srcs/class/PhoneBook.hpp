@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 11:55:40 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/29 08:50:38 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/14 16:52:29 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define PHONEBOOK_HPP
 
 # include "Contact.hpp"
+# include <iomanip>
 # include <iostream>
+# include <string>
 
 class PhoneBook
 {
@@ -22,12 +24,12 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void	addContact(void);
-		void	searchContact(void);
+		void addContact(void);
+		void searchContact(void);
 
 	private:
-		Contact	_contacts[8];
-		int		_nbContacts;
+		Contact _contacts[8];
+		int _nbContacts;
 
 		std::string getInput(std::string field) const;
 		void printContacts(void);
