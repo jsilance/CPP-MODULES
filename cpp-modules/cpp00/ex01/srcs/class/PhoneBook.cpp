@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 12:36:58 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/14 17:27:41 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/14 17:33:05 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,30 +77,21 @@ void PhoneBook::printContacts(void)
 		if (size_of_fn <= 10)
 			std::cout << this->_contacts[i].getFirstName();
 		else
-		{
-			std::cout << this->_contacts[i].getFirstName().substr(0, 9);
-			std::cout << ".";
-		}
+			std::cout << this->_contacts[i].getFirstName().substr(0, 9) << ".";
 		std::cout << "|";
 		
 		std::cout << std::setw(10 - (size_of_ln > 10));
 		if (size_of_ln <= 10)
 			std::cout << this->_contacts[i].getLastName();
 		else
-		{
-			std::cout << this->_contacts[i].getLastName().substr(0, 9);
-			std::cout << ".";
-		}
+			std::cout << this->_contacts[i].getLastName().substr(0, 9) << ".";
 		std::cout << "|";
 
 		std::cout << std::setw(10 - (size_of_nc > 10));
 		if (size_of_nc <= 10)
 			std::cout << this->_contacts[i].getNickName();
 		else
-		{
-			std::cout << this->_contacts[i].getNickName().substr(0, 9);
-			std::cout << ".";
-		}
+			std::cout << this->_contacts[i].getNickName().substr(0, 9) << ".";
 		std::cout << "|" << std::endl;
 	}
 	std::cout << std::endl;
