@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 12:50:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/29 08:54:18 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/16 15:32:39 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,39 +37,9 @@ void Contact::setNickname(std::string nickname)
 	this->_nickname = nickname;
 }
 
-void Contact::setLogin(std::string login)
-{
-	this->_login = login;
-}
-
-void Contact::setPostalAddress(std::string postalAddress)
-{
-	this->_postalAddress = postalAddress;
-}
-
-void Contact::setEmailAddress(std::string emailAddress)
-{
-	this->_emailAddress = emailAddress;
-}
-
 void Contact::setPhoneNumber(std::string phoneNumber)
 {
 	this->_phoneNumber = phoneNumber;
-}
-
-void Contact::setBirthdayDate(std::string birthdayDate)
-{
-	this->_birthdayDate = birthdayDate;
-}
-
-void Contact::setFavoriteMeal(std::string favoriteMeal)
-{
-	this->_favoriteMeal = favoriteMeal;
-}
-
-void Contact::setUnderwearColor(std::string underwearColor)
-{
-	this->_underwearColor = underwearColor;
 }
 
 void Contact::setDarkestSecret(std::string darkestSecret)
@@ -92,39 +62,9 @@ std::string	Contact::getNickName(void) const
 	return (this->_nickname);
 }
 
-std::string	Contact::getLogin(void) const
-{
-	return (this->_login);
-}
-
-std::string	Contact::getPostalAddress(void) const
-{
-	return (this->_postalAddress);
-}
-
-std::string	Contact::getEmailAddress(void) const
-{
-	return (this->_emailAddress);
-}
-
 std::string	Contact::getPhoneNumber(void) const
 {
 	return (this->_phoneNumber);
-}
-
-std::string	Contact::getBirthdayDate(void) const
-{
-	return (this->_birthdayDate);
-}
-
-std::string	Contact::getFavoriteMeal(void) const
-{
-	return (this->_favoriteMeal);
-}
-
-std::string	Contact::getUnderwearColor(void) const
-{
-	return (this->_underwearColor);
 }
 
 std::string	Contact::getDarkestSecret(void) const

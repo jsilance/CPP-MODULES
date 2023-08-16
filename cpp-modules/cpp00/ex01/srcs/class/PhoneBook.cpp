@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 12:36:58 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/14 17:33:05 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/16 15:33:13 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,7 @@ void PhoneBook::addContact(void)
 	this->_contacts[this->_nbContacts].setFirstName(this->getInput("First name: "));
 	this->_contacts[this->_nbContacts].setLastName(this->getInput("Last name: "));
 	this->_contacts[this->_nbContacts].setNickname(this->getInput("Nickname: "));
-	this->_contacts[this->_nbContacts].setLogin(this->getInput("Login: "));
-	this->_contacts[this->_nbContacts].setPostalAddress(this->getInput("Postal Address: "));
-	this->_contacts[this->_nbContacts].setEmailAddress(this->getInput("Email Address: "));
 	this->_contacts[this->_nbContacts].setPhoneNumber(this->getInput("Phone Number: "));
-	this->_contacts[this->_nbContacts].setBirthdayDate(this->getInput("Birthday date: "));
-	this->_contacts[this->_nbContacts].setFavoriteMeal(this->getInput("Favorite meal: "));
-	this->_contacts[this->_nbContacts].setUnderwearColor(this->getInput("Underwear color: "));
 	this->_contacts[this->_nbContacts].setDarkestSecret(this->getInput("Darkest secret: "));
 	this->_nbContacts++;
 }
@@ -107,13 +101,7 @@ void PhoneBook::printSpecifiedContact(int index)
 	std::cout << "First name: " << this->_contacts[index].getFirstName() << std::endl;
 	std::cout << "Last name: " << this->_contacts[index].getLastName() << std::endl;
 	std::cout << "Nickname: " << this->_contacts[index].getNickName() << std::endl;
-	std::cout << "Login: " << this->_contacts[index].getLogin() << std::endl;
-	std::cout << "Postal address: " << this->_contacts[index].getPostalAddress() << std::endl;
-	std::cout << "Email address: " << this->_contacts[index].getEmailAddress() << std::endl;
 	std::cout << "Phone number: " << this->_contacts[index].getPhoneNumber() << std::endl;
-	std::cout << "Birthday: " << this->_contacts[index].getBirthdayDate() << std::endl;
-	std::cout << "Favorite meal: " << this->_contacts[index].getFavoriteMeal() << std::endl;
-	std::cout << "Underwear color: " << this->_contacts[index].getUnderwearColor() << std::endl;
 	std::cout << "Darkest secret: " << this->_contacts[index].getDarkestSecret() << std::endl;
 }
 
@@ -125,11 +113,7 @@ void PhoneBook::searchContact(void)
 	PhoneBook::printContacts();
 	std::cout << "Enter the id of the contact: ";
 	if (!(std::cin >> index) || index < 1 || index > 8)
-	{
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Wrong id, try something between 1 and 8" << std::endl;
-	}
 	if (index >= 1 && index <= 8)
 	{
 		index--;
