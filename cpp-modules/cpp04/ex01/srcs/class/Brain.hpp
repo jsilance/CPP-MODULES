@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 22:38:25 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/11 01:36:33 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/16 04:46:35 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Brain
 		~Brain(void);
 
 		Brain &operator=(Brain const &rhs);
-		std::ostream &operator<<(std::ostream &o, Brain const &i);
 		
 		void setIdea(int index, std::string idea);
 		std::string getIdea(int index) const;

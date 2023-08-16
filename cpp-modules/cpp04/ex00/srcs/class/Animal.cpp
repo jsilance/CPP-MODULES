@@ -6,13 +6,13 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:45:25 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 18:45:58 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/16 04:42:57 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal(): _type("Animal")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 	return ;
@@ -54,4 +54,3 @@ void	Animal::makeSound() const
 	std::cout << "Animal sound" << std::endl;
 	return ;
 }
-

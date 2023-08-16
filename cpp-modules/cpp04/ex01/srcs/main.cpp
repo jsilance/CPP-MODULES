@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 23:42:48 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/11 01:29:54 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/16 04:48:50 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int main()
 {
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
+
+	std::cout << std::endl;
+	
+	std::cout << std::endl;
 
 	delete j;
 	delete i;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 01:30:59 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/11 01:32:01 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/16 04:46:45 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,3 @@ void	Brain::printIdeas(void) const
 		std::cout << this->_ideas[i] << std::endl;
 	return ;
 }
-
-std::ostream	&operator<<(std::ostream &o, Brain const &i)
-{
-	o << i.getIdea(0);
-	return (o);
-}
-
