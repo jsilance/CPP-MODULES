@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:52:39 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/26 19:42:21 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/17 18:49:49 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int ac, char **ag)
 				if (j == str_to_replace.size())
 				{
 					ofs << ag[3];
-					i += j;
+					i += j - 1;
 				}
 				else
 					ofs << line[i];
