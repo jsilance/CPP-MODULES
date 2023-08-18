@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 08:28:54 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/07/30 15:59:45 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/18 14:11:35 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ int main( void ) {
 	std::cout << Fixed::max( a, b ) << std::endl;
 	std::cout << Fixed::max( 30.5f, 3.5f ) << std::endl;
 	std::cout << Fixed::min( 30.5f, 3.5f ) << std::endl;
+	
+	std::cout << std::endl;
+	
 	return (0);
 }
