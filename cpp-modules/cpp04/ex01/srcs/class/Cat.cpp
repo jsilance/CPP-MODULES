@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:03 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/11 01:17:40 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:43:31 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ Cat::Cat(Cat const &src)
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat destructor called" << std::endl;
 	delete this->_brain;
+	std::cout << "Cat destructor called" << std::endl;
 	return ;
 }
 

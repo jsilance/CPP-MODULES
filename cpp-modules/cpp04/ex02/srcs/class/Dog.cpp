@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:47:12 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/19 19:43:38 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:47:58 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Dog::Dog()
 {
 	std::cout << "Dog default constructor called" << std::endl;
 	this->_type = "Dog";
-	this->_brain = new Brain();
 	return ;
 }
 
@@ -24,13 +23,11 @@ Dog::Dog(Dog const &src)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = src;
-	this->_brain = new Brain();
 	return ;
 }
 
 Dog::~Dog(void)
 {
-	delete this->_brain;
 	std::cout << "Dog destructor called" << std::endl;
 	return ;
 }
