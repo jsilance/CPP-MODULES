@@ -6,11 +6,13 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 18:37:54 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/20 15:44:46 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/20 16:21:22 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./class/Point.hpp"
+
+// calcul des coefficients des poids des sommets avec le barycentre et le point a comparer
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
