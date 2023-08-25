@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 15:42:33 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 16:35:33 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 16:18:34 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ int main()
 	DiamondTrap		*clap2 = new DiamondTrap(*clap);
 	DiamondTrap		*clap3 = new DiamondTrap();
 
+	std::cout << std::endl;
+
 	clap->attack("Clap2");
 	clap->takeDamage(10);
 	clap->beRepaired(10);
 	clap->whoAmI();
 	clap->highFivesGuys();
 	clap->guardGate();
+
 	std::cout << std::endl;
 
 	clap2->attack("Clap3");
@@ -35,6 +38,7 @@ int main()
 	clap2->whoAmI();
 	clap2->highFivesGuys();
 	clap2->guardGate();
+
 	std::cout << std::endl;
 
 	clap3->attack("Clap");

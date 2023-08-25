@@ -6,13 +6,13 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:17 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/25 13:59:40 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 16:14:38 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(void) : ScavTrap(), FragTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	this->_name = "Default";
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap()
 	this->FragTrap::_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
 	std::cout << "DiamondTrap name constructor called" << std::endl;
 	this->_name = name;
@@ -30,7 +30,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(), FragTra
 	this->FragTrap::_attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const & src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
+DiamondTrap::DiamondTrap(DiamondTrap const & src) : ScavTrap(src), FragTrap(src)
 {
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 	*this = src;
@@ -94,5 +94,5 @@ void DiamondTrap::beRepaired(unsigned int amount)
 
 void			DiamondTrap::whoAmI(void)
 {
-	std::cout << "My name is " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
+	std::cout << "My name is " << this->_name << " and my ClapTrap name is " << this->ClapTrap::_name << std::endl;
 }

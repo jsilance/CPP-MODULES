@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 19:55:29 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/25 13:43:40 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 16:16:24 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "./ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap
+class	FragTrap : public virtual ClapTrap
 {
 	public:
 		FragTrap(void);
