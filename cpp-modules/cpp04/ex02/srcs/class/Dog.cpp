@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:47:12 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 18:47:58 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/26 00:11:52 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,23 @@
 
 Dog::Dog()
 {
-	std::cout << "Dog default constructor called" << std::endl;
 	this->_type = "Dog";
-	return ;
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(Dog const &src)
 {
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = src;
-	return ;
 }
 
 Dog::~Dog(void)
 {
 	std::cout << "Dog destructor called" << std::endl;
-	return ;
 }
 
 Dog &Dog::operator=(Dog const &rhs)
 {
-	if (this != &rhs)
-		this->_type = rhs.getType();
+	this->_type = rhs.getType();
 	return (*this);
 }
 

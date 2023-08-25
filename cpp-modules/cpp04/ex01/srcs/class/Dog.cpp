@@ -3,52 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:47:12 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/19 19:43:38 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:49:48 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog(void)
 {
-	std::cout << "Dog default constructor called" << std::endl;
 	this->_type = "Dog";
-	this->_brain = new Brain();
-	return ;
+	this->_brain = new Brain("Je suis le cerveau du chien!");
+	std::cout << "Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(Dog const &src)
 {
+	this->_brain = new Brain(*src._brain);
+	this->_type = src._type;
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = src;
-	this->_brain = new Brain();
-	return ;
 }
 
 Dog::~Dog(void)
 {
 	delete this->_brain;
 	std::cout << "Dog destructor called" << std::endl;
-	return ;
 }
 
 Dog &Dog::operator=(Dog const &rhs)
 {
-	if (this != &rhs)
-		this->_type = rhs.getType();
+	if (this->_brain)
+		delete this->_brain;
+	this->_brain = new Brain(*rhs._brain);
+	this->_type = rhs._type;
 	return (*this);
 }
 
 void	Dog::makeSound() const
 {
 	std::cout << "Woof" << std::endl;
-	return ;
 }
 
 std::string	Dog::getType() const
 {
 	return (this->_type);
+}
+
+Brain	*Dog::getBrain() const
+{
+	return (this->_brain);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 22:38:25 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/16 04:46:35 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/26 00:00:29 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ class Brain
 {
 	public:
 		Brain(void);
+		Brain(std::string idea);
 		Brain(Brain const &copy);
 		~Brain(void);
 
 		Brain &operator=(Brain const &rhs);
 		
 		void setIdea(int index, std::string idea);
-		std::string getIdea(int index) const;
-		void printIdeas(void) const;
+		std::string *getIdea() const;
 
-	private:
-		std::string	_ideas[100];
+	// protected:
+		std::string	*_ideas;
 };
 
 #endif

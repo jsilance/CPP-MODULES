@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:03 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/16 01:32:14 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/26 00:10:53 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,17 @@ Cat::Cat()
 {
 	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
-	return ;
 }
 
 Cat::Cat(Cat const &src)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
-	return ;
 }
 
 Cat::~Cat(void)
 {
 	std::cout << "Cat destructor called" << std::endl;
-	return ;
 }
 
 Cat &Cat::operator=(Cat const &rhs)
@@ -42,7 +39,6 @@ Cat &Cat::operator=(Cat const &rhs)
 void	Cat::makeSound() const
 {
 	std::cout << "Miaou" << std::endl;
-	return ;
 }
 
 std::string	Cat::getType() const

@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:58 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/11 01:17:52 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:34:03 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Dog : public Animal
 {
 	public:
-		Dog();
+		Dog(void);
 		Dog(Dog const & src);
 		virtual ~Dog();
 
@@ -29,6 +29,7 @@ class Dog : public Animal
 
 		virtual void	makeSound() const;
 		std::string		getType() const;
+		Brain			*getBrain() const;
 	private:
 		Brain	*_brain;
 };
