@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:17 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/25 16:14:38 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 19:17:41 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,7 @@ DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & rhs)
 
 void DiamondTrap::attack(const std::string &target)
 {
-	if (this->FragTrap::_hitPoints <= 0)
-		std::cout << "DiamondTrap " << this->_name << " is already dead and can't do that!" << std::endl;
-	else if (this->ScavTrap::_energyPoints <= 0)
-		std::cout << "DiamondTrap " << this->_name << " is out of energy!" << std::endl;
-	else
-	{
-		std::cout << "DiamondTrap " << this->_name << " attacks " << target << ", causing " << this->FragTrap::_attackDamage << " points of damage!" << std::endl;
-		this->ScavTrap::_energyPoints -= 1;
-	}
+	this->ScavTrap::attack(target);
 }
 
 void DiamondTrap::takeDamage(unsigned int amount)

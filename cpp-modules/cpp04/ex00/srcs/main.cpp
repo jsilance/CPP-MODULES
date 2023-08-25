@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 23:42:48 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/16 03:43:34 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 20:00:46 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int main()
 	delete j;
 	delete i;
 	delete k;
+	
+	std::cout << std::endl;
 
 	return (0);
 }
