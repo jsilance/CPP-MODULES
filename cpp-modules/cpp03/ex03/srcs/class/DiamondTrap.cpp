@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:17 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 15:59:57 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:59:40 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	this->_name = "Default";
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->FragTrap::_hitPoints = FragTrap::_hitPoints;
+	this->ScavTrap::_energyPoints = ScavTrap::_energyPoints;
+	this->FragTrap::_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(), FragTrap()
 {
 	std::cout << "DiamondTrap name constructor called" << std::endl;
 	this->_name = name;
-	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
-	this->_attackDamage = FragTrap::_attackDamage;
+	this->FragTrap::_hitPoints = FragTrap::_hitPoints;
+	this->ScavTrap::_energyPoints = ScavTrap::_energyPoints;
+	this->FragTrap::_attackDamage = FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
@@ -47,11 +47,49 @@ DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & rhs)
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
-		this->_hitPoints = rhs._hitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamage = rhs._attackDamage;
+		this->FragTrap::_hitPoints = rhs.FragTrap::_hitPoints;
+		this->ScavTrap::_energyPoints = rhs.ScavTrap::_energyPoints;
+		this->FragTrap::_attackDamage = rhs.FragTrap::_attackDamage;
 	}
 	return (*this);
+}
+
+void DiamondTrap::attack(const std::string &target)
+{
+	if (this->FragTrap::_hitPoints <= 0)
+		std::cout << "DiamondTrap " << this->_name << " is already dead and can't do that!" << std::endl;
+	else if (this->ScavTrap::_energyPoints <= 0)
+		std::cout << "DiamondTrap " << this->_name << " is out of energy!" << std::endl;
+	else
+	{
+		std::cout << "DiamondTrap " << this->_name << " attacks " << target << ", causing " << this->FragTrap::_attackDamage << " points of damage!" << std::endl;
+		this->ScavTrap::_energyPoints -= 1;
+	}
+}
+
+void DiamondTrap::takeDamage(unsigned int amount)
+{
+	if (this->FragTrap::_hitPoints <= 0)
+		std::cout << "DiamondTrap " << this->_name << " is already dead!" << std::endl;
+	else
+	{
+		std::cout << "DiamondTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
+		this->FragTrap::_hitPoints -= amount;
+	}
+}
+
+void DiamondTrap::beRepaired(unsigned int amount)
+{
+	if (this->FragTrap::_hitPoints <= 0)
+		std::cout << "DiamondTrap " << this->_name << " is already dead and can't do that!" << std::endl;
+	else if (this->ScavTrap::_energyPoints <= 0)
+		std::cout << "DiamondTrap " << this->_name << " is out of energy!" << std::endl;
+	else
+	{	
+		std::cout << "DiamondTrap " << this->_name << " is repaired for " << amount << " points of damage!" << std::endl;
+		this->FragTrap::_hitPoints += amount;
+		this->ScavTrap::_energyPoints -= 1;
+	}
 }
 
 void			DiamondTrap::whoAmI(void)

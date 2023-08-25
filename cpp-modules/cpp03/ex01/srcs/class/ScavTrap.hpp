@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 19:16:55 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/01 19:41:42 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:11:19 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class ScavTrap : public ClapTrap
 
 		ScavTrap &operator=(ScavTrap const &copy);
 
-		void	guardGate(void);
+		void attack(const std::string &target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		void guardGate(void);
 };
 
 #endif

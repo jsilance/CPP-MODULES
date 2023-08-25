@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:20:54 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/01 19:31:37 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:34:30 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, int hp, int ep, int ad);
 		ClapTrap(ClapTrap const &copy);
 		~ClapTrap();
 

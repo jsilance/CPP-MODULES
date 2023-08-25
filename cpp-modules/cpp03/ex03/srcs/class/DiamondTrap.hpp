@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:51:32 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/02 15:58:19 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:52:39 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ class DiamondTrap: public ScavTrap, public FragTrap
 
 		DiamondTrap &	operator=(DiamondTrap const & rhs);
 
-		void			whoAmI(void);
+		void attack(const std::string &target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		void whoAmI(void);
 	private:
 		std::string		_name;
 };

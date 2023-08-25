@@ -6,23 +6,28 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:25:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/01 19:29:04 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:28:38 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("Default"), _hitPoints(100), _energyPoints(50), _attackDamage(20)
+ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " is born!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " is born!" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &copy)
+ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad) : _name(name), _hitPoints(hp), _energyPoints(ep), _attackDamage(ad)
+{
+	std::cout << "ClapTrap " << this->_name << " is born!" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &copy): _name(copy._name), _hitPoints(copy._hitPoints), _energyPoints(copy._energyPoints), _attackDamage(copy._attackDamage)
 {
 	*this = copy;
 	std::cout << "ClapTrap " << this->_name << " is born!" << std::endl;
@@ -63,7 +68,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
 		this->_hitPoints -= amount;
-		this->_energyPoints -= 1;
 	}
 }
 
