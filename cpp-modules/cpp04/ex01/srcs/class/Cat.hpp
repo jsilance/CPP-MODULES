@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:46:25 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/11 00:39:51 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:22:50 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Cat : public Animal
 
 		virtual void	makeSound() const;
 		std::string		getType() const;
+		Brain			*getBrain() const;
 	private:
 		Brain	*_brain;
 };

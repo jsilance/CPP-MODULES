@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:44:29 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/08/09 01:23:33 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:09:24 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Animal
 {
 	public:
 		Animal();
-		Animal(std::string type);
 		Animal(Animal const & src);
 		virtual ~Animal();
 
