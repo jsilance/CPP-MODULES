@@ -1,0 +1,110 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/01 16:47:22 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/09/01 18:52:19 by jusilanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "AForm.hpp"
+
+AForm::AForm(): _name("Default"), _signed(0), _gradeToSign(150), _gradeToExe(150)
+{
+}
+
+AForm::AForm(std::string name, int gToSign, int gToExe): _name(name), _signed(0), _gradeToSign(gToSign), _gradeToExe(gToExe)
+{
+}
+
+AForm::~AForm()
+{
+}
+
+std::string AForm::getName() const
+{
+	return (this->_name);
+}
+
+bool AForm::getSigned() const
+{
+	return (this->_signed);
+}
+
+int AForm::getGradeToSign() const
+{
+	return (this->_gradeToSign);
+}
+
+int AForm::getGradeToExe() const
+{
+	return (this->_gradeToExe);
+}
+
+void AForm::setSigned(bool val)
+{
+	this->_signed = val;
+}
+
+void AForm::setGradeToSign(int grade)
+{
+	if (grade < 1)
+		throw AForm::GradeTooHighException();
+	else if (grade > 150)
+		throw AForm::GradeTooLowException();
+	this->_gradeToSign = grade;
+}
+
+void AForm::setGradeToExe(int grade)
+{
+	if (grade < 1)
+		throw AForm::GradeTooHighException();
+	else if (grade > 150)
+		throw AForm::GradeTooLowException();
+	this->_gradeToExe = grade;
+}
+
+void AForm::beSigned(Bureaucrat user)
+{
+	if (user.getGrade() > this->getGradeToSign())
+		throw AForm::GradeTooLowException();
+	this->setSigned(1);
+}
+
+AForm::GradeTooLowException::GradeTooLowException() throw()
+{
+}
+
+AForm::GradeTooLowException::~GradeTooLowException() throw()
+{
+}
+
+AForm::GradeTooHighException::GradeTooHighException() throw()
+{
+}
+
+AForm::GradeTooHighException::~GradeTooHighException() throw()
+{
+}
+
+const char* AForm::GradeTooLowException::what() const throw()
+{
+	return ("\x1b[31mGrade too low!\x1b[0m");
+}
+
+const char* AForm::GradeTooHighException::what() const throw()
+{
+	return ("\x1b[31mGrade too high!\x1b[0m");
+}
+
+std::ostream& operator<<(std::ostream& o, AForm const& rhs)
+{
+	o << "Name: " << rhs.getName() << std::endl;
+	o << "Is signed: " << rhs.getSigned() << std::endl;
+	o << "Level to sign: " << rhs.getGradeToSign() << std::endl;
+	o << "Level to execute: " << rhs.getGradeToExe() << std::endl;
+	return (o);
+}
