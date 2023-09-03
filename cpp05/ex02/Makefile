@@ -6,7 +6,8 @@ NAME		= Form
 
 SRCS		= main.cpp
 
-CLASS		= Bureaucrat.cpp Form.cpp
+CLASS		= Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
+				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 # ============================================================================= #
 

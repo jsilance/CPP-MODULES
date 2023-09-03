@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/01 18:58:42 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/03 15:07:09 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ class AForm
 		void setGradeToSign(int grade);
 		void setGradeToExe(int grade);
 
-		void beSigned(Bureaucrat user);
-		std::string signFrom();
+		virtual void beSigned(Bureaucrat user) = 0;
+		virtual std::string signFrom() = 0;
 
 		// execute need to be the abstrakt point
 
