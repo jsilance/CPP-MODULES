@@ -37,10 +37,10 @@ class AForm
 		void setGradeToSign(int grade);
 		void setGradeToExe(int grade);
 
-		virtual void beSigned(Bureaucrat user) = 0;
-		virtual std::string signFrom() = 0;
+		virtual void beSigned(Bureaucrat user);
+		virtual std::string signFrom();
 
-		void execute(Bureaucrat const & executor) const;
+		void execute(Bureaucrat const & executor) const = 0;
 
 	private:
 		const std::string _name;
