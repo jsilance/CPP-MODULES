@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:57:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/01 18:43:27 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/03 14:51:24 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 {
 	try
 	{
-		Bureaucrat *skibidi = new Bureaucrat("Bob", 148);
+		Bureaucrat *skibidi = new Bureaucrat("Bob", 145);
 
 		Form *formulary = new Form("roi", 147, 146);
 

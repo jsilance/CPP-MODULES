@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:47:22 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/01 18:52:19 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:51:55 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(): _name("Default"), _signed(0), _gradeToSign(150), _gradeToExe(150)
+AForm::AForm(): _name("Default"), _signed(0), _gradeToSign(150), _gradeToExe(150), _target("No target")
 {
 }
 
-AForm::AForm(std::string name, int gToSign, int gToExe): _name(name), _signed(0), _gradeToSign(gToSign), _gradeToExe(gToExe)
+AForm::AForm(std::string name, std::string target, int gToSign, int gToExe): _name(name), _target(target), _signed(0), _gradeToSign(gToSign), _gradeToExe(gToExe)
 {
 }
 
@@ -42,6 +42,11 @@ int AForm::getGradeToSign() const
 int AForm::getGradeToExe() const
 {
 	return (this->_gradeToExe);
+}
+
+std::string AForm::getTarget() const
+{
+	return (this->_target);
 }
 
 void AForm::setSigned(bool val)

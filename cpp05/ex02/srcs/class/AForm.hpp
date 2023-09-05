@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/03 15:07:09 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:50:54 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AForm
 {
 	public:
 		AForm();
-		AForm(std::string name, int gToSign, int gToEx);
+		AForm(std::string name, std::string target, int gToSign, int gToEx);
 		~AForm();
 
 		AForm &operator=(AForm const & src);
@@ -32,6 +32,7 @@ class AForm
 		bool getSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExe() const;
+		std::string getTarget() const;
 
 		void setSigned(bool val);
 		void setGradeToSign(int grade);
@@ -44,6 +45,7 @@ class AForm
 
 	private:
 		const std::string _name;
+		const std::string _target;
 		bool _signed;
 		int _gradeToSign;
 		int _gradeToExe;
