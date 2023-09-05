@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:08:13 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/01 18:53:54 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:35:20 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Bureaucrat
 		void decrementGrade();
 
 		void signForm(AForm & form);
+		void executeForm(AForm const & form);
 
 	private:
 		const std::string _name;

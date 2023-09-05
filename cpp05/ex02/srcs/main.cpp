@@ -6,39 +6,65 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:57:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/01 18:54:12 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:01:49 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./class/Bureaucrat.hpp"
 #include "./class/AForm.hpp"
+#include "./class/ShrubberyCreationForm.hpp"
+#include "./class/RobotomyRequestForm.hpp"
+#include "./class/PresidentialPardonForm.hpp"
 
 int main()
 {
-	try
-	{
-		Bureaucrat *skibidi = new Bureaucrat("Bob", 148);
+	AForm *shrubbery = new ShrubberyCreationForm("home");
+	// RobotomyRequestForm		*robotomy = new AFrom("Bender");
+	// PresidentialPardonForm	*pardon = new AFrom("Zaphod");
 
-		AForm *formulary = new AForm("roi", 147, 146);
+	Bureaucrat				*hermes = new Bureaucrat("Hermes Conrad", 37);
+	Bureaucrat				*bender = new Bureaucrat("Bender", 5);
+	Bureaucrat				*zaphod = new Bureaucrat("Zaphod Beeblebrox", 1);
 
-		std::cout << *skibidi;
-		std::cout << *formulary;
+	std::cout << *hermes << std::endl;
+	std::cout << *bender << std::endl;
+	std::cout << *zaphod << std::endl;
 
-		std::cout << std::endl;
+	std::cout << *shrubbery << std::endl;
+	// std::cout << *robotomy << std::endl;
+	// std::cout << *pardon << std::endl;
 
-		skibidi->signForm(*formulary);
+	hermes->signForm(*shrubbery);
+	// hermes->signForm(*robotomy);
+	// hermes->signForm(*pardon);
 
-		std::cout << std::endl;
+	bender->signForm(*shrubbery);
+	// bender->signForm(*robotomy);
+	// bender->signForm(*pardon);
 
-		std::cout << *formulary;
+	zaphod->signForm(*shrubbery);
+	// zaphod->signForm(*robotomy);
+	// zaphod->signForm(*pardon);
 
-		delete formulary;
-		delete skibidi;
-	}
-	catch(const std::exception & e)
-	{
-		std::cout << e.what() << std::endl;;
-		return (1);
-	}
+	hermes->executeForm(*shrubbery);
+	// hermes->executeForm(*robotomy);
+	// hermes->executeForm(*pardon);
+
+	bender->executeForm(*shrubbery);
+	// bender->executeForm(*robotomy);
+	// bender->executeForm(*pardon);
+
+	zaphod->executeForm(*shrubbery);
+	// zaphod->executeForm(*robotomy);
+	// zaphod->executeForm(*pardon);
+
+	delete shrubbery;
+	// delete robotomy;
+	// delete pardon;
+
+	delete hermes;
+	delete bender;
+	delete zaphod;
+
 	return (0);
 }

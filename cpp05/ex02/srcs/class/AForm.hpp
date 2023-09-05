@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/05 09:50:54 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:03:39 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AForm
 {
 	public:
 		AForm();
-		AForm(std::string name, std::string target, int gToSign, int gToEx);
+		AForm(std::string name, int gToSign, int gToEx);
 		~AForm();
 
 		AForm &operator=(AForm const & src);
@@ -32,7 +32,6 @@ class AForm
 		bool getSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExe() const;
-		std::string getTarget() const;
 
 		void setSigned(bool val);
 		void setGradeToSign(int grade);
@@ -41,11 +40,10 @@ class AForm
 		virtual void beSigned(Bureaucrat user) = 0;
 		virtual std::string signFrom() = 0;
 
-		// execute need to be the abstrakt point
+		void execute(Bureaucrat const & executor) const;
 
 	private:
 		const std::string _name;
-		const std::string _target;
 		bool _signed;
 		int _gradeToSign;
 		int _gradeToExe;
@@ -63,6 +61,14 @@ class AForm
 		public:
 			GradeTooLowException() throw();
 			virtual ~GradeTooLowException() throw();
+			virtual const char* what() const throw();
+	};
+
+	class NotSignedException: public std::exception
+	{
+		public:
+			NotSignedException() throw();
+			virtual ~NotSignedException() throw();
 			virtual const char* what() const throw();
 	};
 };
