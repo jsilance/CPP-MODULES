@@ -34,7 +34,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-void ShrubberyCreationForm::executeConcrete() const
+void ShrubberyCreationForm::execute() const
 {
 	std::ofstream fs;
 
