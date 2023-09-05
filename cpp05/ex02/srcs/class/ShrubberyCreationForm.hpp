@@ -24,7 +24,7 @@ class ShrubberyCreationForm: public AForm
 
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const & src);
 		
-		virtual void executeConcrete() const;
+		virtual void execute() const;
 		
 	private:
 		const std::string _target;
