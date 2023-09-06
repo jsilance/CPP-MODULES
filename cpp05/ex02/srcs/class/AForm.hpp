@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/05 17:03:39 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/06 17:31:20 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AForm
 {
 	public:
 		AForm();
-		AForm(std::string name, int gToSign, int gToEx);
+		AForm(std::string name, std::string target, int gToSign, int gToEx);
 		~AForm();
 
 		AForm &operator=(AForm const & src);
@@ -37,10 +37,10 @@ class AForm
 		void setGradeToSign(int grade);
 		void setGradeToExe(int grade);
 
-		virtual void beSigned(Bureaucrat user);
+		void beSigned(Bureaucrat user);
 		virtual std::string signFrom();
 
-		void execute(Bureaucrat const & executor) const = 0;
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 	private:
 		const std::string _name;
