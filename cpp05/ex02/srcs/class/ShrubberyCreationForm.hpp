@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:13:19 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/06 17:29:59 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:55:13 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ShrubberyCreationForm: public AForm
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const & src);
 		
 		void execute(Bureaucrat const & executor) const;
+		std::string getTarget() const;
 		
 	private:
 		const std::string _target;

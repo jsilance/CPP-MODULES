@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:08:41 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/05 17:09:06 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:43:49 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "AForm.hpp"
 # include <fstream>
+# include <cstdlib>
+# include <ctime>
 
 class RobotomyRequestForm: public AForm
 {
@@ -25,6 +27,7 @@ class RobotomyRequestForm: public AForm
 		RobotomyRequestForm &operator=(RobotomyRequestForm const & src);
 		
 		virtual void executeConcrete() const;
+		std::string getTarget() const;
 		
 	private:
 		const std::string _target;

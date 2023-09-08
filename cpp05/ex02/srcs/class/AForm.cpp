@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:47:22 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/05 17:03:12 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:49:39 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ AForm::AForm(): _name("Default"), _signed(0), _gradeToSign(150), _gradeToExe(150
 {
 }
 
-AForm::AForm(std::string name, std::string target, int gToSign, int gToExe): _name(name), _signed(0), _gradeToSign(gToSign), _gradeToExe(gToExe)
+AForm::AForm(std::string name, int gToSign, int gToExe): _name(name), _signed(0), _gradeToSign(gToSign), _gradeToExe(gToExe)
 {
 }
 
@@ -67,7 +67,7 @@ void AForm::setGradeToExe(int grade)
 	this->_gradeToExe = grade;
 }
 
-void AForm::beSigned(Bureaucrat user)
+void AForm::signForm(Bureaucrat user)
 {
 	if (user.getGrade() > this->getGradeToSign())
 		throw AForm::GradeTooLowException();
@@ -80,22 +80,6 @@ void AForm::execute(Bureaucrat const & executor) const
 		throw AForm::NotSignedException();
 	else if (executor.getGrade() > this->getGradeToExe())
 		throw AForm::GradeTooLowException();
-}
-
-AForm::GradeTooLowException::GradeTooLowException() throw()
-{
-}
-
-AForm::GradeTooLowException::~GradeTooLowException() throw()
-{
-}
-
-AForm::GradeTooHighException::GradeTooHighException() throw()
-{
-}
-
-AForm::GradeTooHighException::~GradeTooHighException() throw()
-{
 }
 
 const char* AForm::GradeTooLowException::what() const throw()

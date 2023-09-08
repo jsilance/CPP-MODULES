@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/06 17:31:20 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:51:17 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AForm
 {
 	public:
 		AForm();
-		AForm(std::string name, std::string target, int gToSign, int gToEx);
+		AForm(std::string name, int gToSign, int gToEx);
 		~AForm();
 
 		AForm &operator=(AForm const & src);
@@ -37,7 +37,7 @@ class AForm
 		void setGradeToSign(int grade);
 		void setGradeToExe(int grade);
 
-		void beSigned(Bureaucrat user);
+		virtual void signForm(Bureaucrat user);
 		virtual std::string signFrom();
 
 		virtual void execute(Bureaucrat const & executor) const = 0;
@@ -51,24 +51,18 @@ class AForm
 	class GradeTooHighException: public std::exception
 	{
 		public:
-			GradeTooHighException() throw();
-			virtual ~GradeTooHighException() throw();
 			virtual const char* what() const throw();
 	};
 	
 	class GradeTooLowException: public std::exception
 	{
 		public:
-			GradeTooLowException() throw();
-			virtual ~GradeTooLowException() throw();
 			virtual const char* what() const throw();
 	};
 
 	class NotSignedException: public std::exception
 	{
 		public:
-			NotSignedException() throw();
-			virtual ~NotSignedException() throw();
 			virtual const char* what() const throw();
 	};
 };

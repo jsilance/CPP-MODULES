@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:13:19 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/05 17:06:53 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:32:35 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,20 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-void ShrubberyCreationForm::execute() const
+std::string ShrubberyCreationForm::getTarget() const
+{
+	return (this->_target);
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::ofstream fs;
 
 	fs.open(this->getTarget() + "_shruberry", std::fstream::out | std::fstream::trunc);
 	if (!fs.good())
 		std::cerr << "Error when opening " << this->getTarget() << "_shruberry\n";
+	else
+		executor.executeForm(*this);
 	fs << "       _-_\n";
 	fs << "    /~~   ~~\\\n";
 	fs << " /~~         ~~\\\n";

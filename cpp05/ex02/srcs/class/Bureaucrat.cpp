@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:34:02 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/05 15:35:39 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:48:47 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void Bureaucrat::signForm(AForm & form)
 {
 	try
 	{
-		form.beSigned(*this);
+		form.signForm(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception & e)
@@ -106,7 +106,7 @@ void Bureaucrat::signForm(AForm & form)
 	}
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(AForm const & form) const
 {
 	try
 	{
@@ -117,22 +117,6 @@ void Bureaucrat::executeForm(AForm const & form)
 	{
 		std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << "." << std::endl;
 	}
-}
-
-Bureaucrat::GradeTooLowException::GradeTooLowException() throw()
-{
-}
-
-Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
-{
-}
-
-Bureaucrat::GradeTooHighException::GradeTooHighException() throw()
-{
-}
-
-Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
-{
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
