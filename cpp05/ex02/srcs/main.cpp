@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:57:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/06 17:30:25 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:41:38 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main()
 	// zaphod->signForm(*robotomy);
 	// zaphod->signForm(*pardon);
 
-	hermes->executeForm(shrubbery);
+	hermes->executeForm(shrubbery); // Problem from here <-------->
 	// hermes->executeForm(*robotomy);
 	// hermes->executeForm(*pardon);
 

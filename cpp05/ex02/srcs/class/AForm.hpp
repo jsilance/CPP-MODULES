@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/08 17:51:17 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:03:40 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ class AForm
 		void setGradeToSign(int grade);
 		void setGradeToExe(int grade);
 
-		virtual void signForm(Bureaucrat user);
-		virtual std::string signFrom();
+		void beSign(Bureaucrat user);
 
 		virtual void execute(Bureaucrat const & executor) const = 0;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:34:02 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/08 17:48:47 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:04:17 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void Bureaucrat::signForm(AForm & form)
 {
 	try
 	{
-		form.signForm(*this);
+		form.beSign(*this);
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
 	}
 	catch(const std::exception & e)

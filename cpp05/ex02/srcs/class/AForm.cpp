@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:47:22 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/08 17:49:39 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:02:44 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ AForm::AForm(std::string name, int gToSign, int gToExe): _name(name), _signed(0)
 
 AForm::~AForm()
 {
+}
+
+AForm &AForm::operator=(AForm const & src)
+{
+	if (this == &src)
+		return (*this);
+	this->setGradeToExe(src.getGradeToExe());
+	this->setGradeToSign(src.getGradeToSign());
+	this->setSigned(src.getSigned());
+	return (*this);
 }
 
 std::string AForm::getName() const
@@ -67,7 +77,7 @@ void AForm::setGradeToExe(int grade)
 	this->_gradeToExe = grade;
 }
 
-void AForm::signForm(Bureaucrat user)
+void AForm::beSign(Bureaucrat user)
 {
 	if (user.getGrade() > this->getGradeToSign())
 		throw AForm::GradeTooLowException();

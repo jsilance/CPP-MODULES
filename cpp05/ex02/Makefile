@@ -29,7 +29,7 @@ LDFLAGS		= -I ./class
 
 CC			= c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 RM			= rm -f
 
