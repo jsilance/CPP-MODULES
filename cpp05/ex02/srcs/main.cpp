@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:57:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/12 20:41:38 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:00:53 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,57 @@
 int main()
 {
 	ShrubberyCreationForm shrubbery("home");
-	// RobotomyRequestForm	robotomy("Bender");
-	// PresidentialPardonForm	pardon("Zaphod");
+	ShrubberyCreationForm shrubberyy("White House");
+	RobotomyRequestForm	robotomy("Mockey");
+	PresidentialPardonForm	pardon("Zaphod");
 
 	Bureaucrat				*hermes = new Bureaucrat("Hermes Conrad", 37);
 	Bureaucrat				*bender = new Bureaucrat("Bender", 5);
-	Bureaucrat				*zaphod = new Bureaucrat("Zaphod Beeblebrox", 1);
+	Bureaucrat				*zaphod = new Bureaucrat("Kappa Boy", 14);
 
 	std::cout << *hermes << std::endl;
 	std::cout << *bender << std::endl;
 	std::cout << *zaphod << std::endl;
 
 	std::cout << shrubbery << std::endl;
-	// std::cout << *robotomy << std::endl;
-	// std::cout << *pardon << std::endl;
+	std::cout << robotomy << std::endl;
+	std::cout << pardon << std::endl;
+
+	std::cout << std::endl << "***shrubbery sign***" << std::endl << std::endl;
 
 	hermes->signForm(shrubbery);
-	// hermes->signForm(*robotomy);
-	// hermes->signForm(*pardon);
-
 	bender->signForm(shrubbery);
-	// bender->signForm(*robotomy);
-	// bender->signForm(*pardon);
+	zaphod->signForm(shrubberyy);
+	
+	std::cout << std::endl << "***shrubbery execute***" << std::endl << std::endl;
 
-	zaphod->signForm(shrubbery);
-	// zaphod->signForm(*robotomy);
-	// zaphod->signForm(*pardon);
-
-	hermes->executeForm(shrubbery); // Problem from here <-------->
-	// hermes->executeForm(*robotomy);
-	// hermes->executeForm(*pardon);
-
+	hermes->executeForm(shrubbery);
 	bender->executeForm(shrubbery);
-	// bender->executeForm(*robotomy);
-	// bender->executeForm(*pardon);
+	zaphod->executeForm(shrubberyy);
 
-	zaphod->executeForm(shrubbery);
-	// zaphod->executeForm(*robotomy);
-	// zaphod->executeForm(*pardon);
+	std::cout << std::endl << "***robotomy sign***" << std::endl << std::endl;
+
+	hermes->signForm(robotomy);
+	bender->signForm(robotomy);
+	zaphod->signForm(robotomy);
+
+	std::cout << std::endl << "***robotomy execute***" << std::endl << std::endl;
+
+	hermes->executeForm(robotomy);
+	bender->executeForm(robotomy);
+	zaphod->executeForm(robotomy);
+
+	std::cout << std::endl << "***pardon sign***" << std::endl << std::endl;
+
+	hermes->signForm(pardon);
+	bender->signForm(pardon);
+	zaphod->signForm(pardon);
+
+	std::cout << std::endl << "***pardon execute***" << std::endl << std::endl;
+
+	hermes->executeForm(pardon);
+	bender->executeForm(pardon);
+	zaphod->executeForm(pardon);
 
 	delete hermes;
 	delete bender;

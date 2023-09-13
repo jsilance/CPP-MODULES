@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:11:37 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/08 17:45:58 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/13 13:59:10 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,16 @@ std::string RobotomyRequestForm::getTarget() const
 	return (_target);
 }
 
-void RobotomyRequestForm::executeConcrete() const
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
+	if (!this->getSigned())
+		throw AForm::NotSignedException();
+	if (executor.getGrade() > this->getGradeToExe())
+		throw AForm::GradeTooLowException();
 	srand(time(NULL));
 	std::cout << "* drilling noises *" << std::endl;
 	if (rand() % 2)
-		std::cout << _target << " has been robotomized successfully." << std::endl;
+		std::cout << this->_target << " has been robotomized successfully." << std::endl;
 	else
-		std::cout << _target << " robotomization failed." << std::endl;
+		std::cout << this->_target << " robotomization failed." << std::endl;
 }

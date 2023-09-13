@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:08:41 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/08 17:43:49 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/13 13:40:15 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm: public AForm
 
 		RobotomyRequestForm &operator=(RobotomyRequestForm const & src);
 		
-		virtual void executeConcrete() const;
+		void execute(Bureaucrat const & executor) const;
 		std::string getTarget() const;
 		
 	private:

@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:07:45 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/12 20:03:40 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/13 13:21:51 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,23 +47,24 @@ class AForm
 		int _gradeToSign;
 		int _gradeToExe;
 
-	class GradeTooHighException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw();
-	};
-	
-	class GradeTooLowException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw();
-	};
+	protected:
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+		
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 
-	class NotSignedException: public std::exception
-	{
-		public:
-			virtual const char* what() const throw();
-	};
+		class NotSignedException: public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 std::ostream& operator<<(std::ostream& o, AForm const& rhs);
