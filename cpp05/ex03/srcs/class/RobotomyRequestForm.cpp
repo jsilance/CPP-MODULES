@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:11:37 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/13 13:59:10 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/14 00:11:10 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	srand(time(NULL));
 	std::cout << "* drilling noises *" << std::endl;
 	if (rand() % 2)
-		std::cout << this->_target << " has been robotomized successfully." << std::endl;
+		std::cout << this->_target << " has been robotomized \x1b[32msuccessfully\x1b[0m." << std::endl;
 	else
-		std::cout << this->_target << " robotomization failed." << std::endl;
+		std::cout << this->_target << " robotomization \x1b[31mfailed\x1b[0m." << std::endl;
 }

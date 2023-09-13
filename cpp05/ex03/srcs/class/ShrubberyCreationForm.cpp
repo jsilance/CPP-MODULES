@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:13:19 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/13 13:23:12 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/14 00:16:38 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	fs << "   ~  \\\\ //  ~\n";
 	fs << "       | |\n";
 	fs << "       | |\n";
-	fs << "_______/ \\_______\n";
+	fs << "______/   \\_______\n";
 
 	fs.close();
 }

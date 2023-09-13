@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 08:57:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/13 23:54:48 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/14 00:06:30 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main()
 		hermes->executeForm(*rrf);
 		delete rrf;
 	}
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -39,6 +40,7 @@ int main()
 		bender->executeForm(*rrf);
 		delete rrf;
 	}
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -48,6 +50,8 @@ int main()
 		delete rrf;
 	}
 	
+	std::cout << std::endl << std::endl;
+
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -56,6 +60,7 @@ int main()
 		hermes->executeForm(*rrf);
 		delete rrf;
 	}
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -64,6 +69,7 @@ int main()
 		bender->executeForm(*rrf);
 		delete rrf;
 	}
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -73,6 +79,8 @@ int main()
 		delete rrf;
 	}
 	
+	std::cout << std::endl << std::endl;
+	
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -81,6 +89,7 @@ int main()
 		hermes->executeForm(*rrf);
 		delete rrf;
 	}
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
@@ -89,6 +98,7 @@ int main()
 		bender->executeForm(*rrf);
 		delete rrf;
 	}
+	std::cout << std::endl;
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
