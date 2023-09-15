@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 16:47:22 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/01 18:06:59 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/15 11:14:15 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ Form::Form(): _name("Default"), _signed(0), _gradeToSign(150), _gradeToExe(150)
 
 Form::Form(std::string name, int gToSign, int gToExe): _name(name), _signed(0), _gradeToSign(gToSign), _gradeToExe(gToExe)
 {
+	if (gToSign < 1 || gToExe < 1)
+		throw Form::GradeTooHighException();
+	else if (gToSign > 150 || gToExe > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::~Form()
