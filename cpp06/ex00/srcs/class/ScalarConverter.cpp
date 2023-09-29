@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:30:51 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/29 13:24:26 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:19:13 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,128 +31,54 @@ ScalarConverter& ScalarConverter::operator=(ScalarConverter const & src)
 	return (*this);
 }
 
-int ScalarConverter::defineType(std::string param)
+std::string ScalarConverter::toChar(double& val)
 {
-	int i = 0;
-	int digit = 0;
-	int minus = 0;
-	int letters = 0;
-	int dot = 0;
-	int isFloat = 0;
+	if (val < 127 && val > 0 && isprint(val))
+		return (std::to_string(val));
+	return (std::string("impossible"));
+}
 
-	while (param[i])
+std::string ScalarConverter::toInt(double& val)
+{
+	if (val < INT_MIN && val > INT_MAX && isprint(val))
+		return (std::to_string(val));
+	return (std::string("impossible"));
+}
+
+std::string ScalarConverter::toFloat(double& val)
+{
+	std::string strValue = "impossible";
+	if (std::isinf(val))
+		return ((val < 0) ? "-inff" : "+inff");
+	else if (std::isnan(val))
+		return ("nanf");
+	if (val < std::numeric_limits<float>::min() || val > std::numeric_limits<float>::max())
+		return ("impossible");
+	else
 	{
-		if (isdigit(param[i]))
-			digit++;
-		else if (param[i] == '.')
-			dot++;
-		else if (!isdigit(param[i]) && !isspace(param[i]))
-		{
-			if (param[i] == 'f')
-				isFloat++;
-			if (param[i] == '-' || param[i] == '+')
-				minus++;
-			else
-				letters++;
-		}
-		i++;
+		strValue = std::to_string(static_cast<float>(val));
+		return (strValue + "f");
 	}
-	if (isFloat == 1 && letters == 1 && dot == 1 && digit > 0 && minus < 2)
-		return (FLOAT_TYPE);
-	else if (param.size() == 1 && digit == 0)
-		return (CHAR_TYPE);
-	else if (letters == 0 && dot == 1 && digit > 0 && minus < 2)
-		return (DOUBLE_TYPE);
-	else if (letters == 0 && minus < 2 && digit < 10 && dot == 0)
-		return (INT_TYPE);
-	return (STRING_TYPE);
-}
-
-void ScalarConverter::fromChar(std::string param)
-{
-	char valChar = param[0];
-	int valInt = static_cast<int>(valChar);
-	float valFloat = static_cast<float>(valChar);
-	double valDouble = static_cast<double>(valChar);
-	
-	printValue(valChar, valInt, valFloat, valDouble);
-}
-
-void ScalarConverter::fromInt(std::string param)
-{
-	int valInt = atoi(param.c_str());	
-	char valChar = static_cast<char>(valInt);
-	float valFloat = static_cast<float>(valInt);
-	double valDouble = static_cast<double>(valInt);
-	
-	printValue(valChar, valInt, valFloat, valDouble);
-}
-
-void ScalarConverter::fromFloat(std::string param)
-{
-	float valFloat = atof(param.c_str());
-	char valChar = static_cast<char>(valFloat);
-	int valInt = static_cast<int>(valFloat);
-	double valDouble = static_cast<double>(valFloat);
-	
-	printValue(valChar, valInt, valFloat, valDouble);
-}
-
-void ScalarConverter::fromDouble(std::string param)
-{
-	double valDouble = strtod(param.c_str(), NULL);
-	char valChar = static_cast<char>(valDouble);
-	int valInt = static_cast<int>(valDouble);
-	double valFloat = static_cast<float>(valDouble);
-	
-	printValue(valChar, valInt, valFloat, valDouble);
-}
-
-void ScalarConverter::printValue(char valChar, int valInt, float valFloat, double valDouble)
-{
-	if (isprint(valChar))
-		std::cout << "char: " << valChar << std::endl;
-	else
-		std::cout << "char: impossible" << std::endl;
-	std::cout << "int: " << valInt << std::endl;
-	if (valFloat > static_cast<float>(static_cast<int>(valFloat)))
-		std::cout << "float: " << static_cast<float>(valFloat) << 'f' << std::endl;
-	else
-		std::cout << "float: " << static_cast<float>(valFloat) << ".0f" << std::endl;
-	if (valDouble > static_cast<double>(static_cast<int>(valDouble)))
-		std::cout << "double: " << static_cast<double>(valDouble) << std::endl;
-	else
-		std::cout << "double: " << static_cast<double>(valDouble) << ".0" << std::endl;
-}
-
-void ScalarConverter::printString()
-{
-	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: nanf" << std::endl;
-	std::cout << "double: nan" << std::endl;
+	return (std::string("impossible"));
 }
 
 void ScalarConverter::convert(std::string param)
 {
-	int type = defineType(param);
-	switch (type)
+	try
 	{
-		case (CHAR_TYPE):
-			fromChar(param);
-			break;
-		case (INT_TYPE):
-			fromInt(param);
-			break;
-		case (FLOAT_TYPE):
-			fromFloat(param);
-			break;
-		case (DOUBLE_TYPE):
-			fromDouble(param);
-			break;
-		default:
-			printString();
-			break;
+		double value;
+		value = std::atof(param.c_str());
+		std::cout << "char: " << toChar(value) << std::endl;
+		std::cout << "int: " << toInt(value) << std::endl;
+		std::cout << "float: " << toFloat(value) << std::endl;
+		std::cout << "double: " << static_cast<double>(value) << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
 	}
 }
 

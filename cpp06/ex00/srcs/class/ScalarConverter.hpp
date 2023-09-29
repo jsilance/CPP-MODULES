@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 01:55:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/29 12:40:09 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:09:41 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,7 @@
 # include <cctype>
 # include <cstdlib>
 
-enum type
-{
-	STRING_TYPE = -1,
-	CHAR_TYPE,
-	INT_TYPE,
-	FLOAT_TYPE,
-	DOUBLE_TYPE	
-};
+# include <stdio.h>
 
 class ScalarConverter
 {
@@ -38,14 +31,9 @@ class ScalarConverter
 
 		ScalarConverter& operator=(ScalarConverter const & src);
 
-		static void fromChar(std::string param);
-		static void fromInt(std::string param);
-		static void fromFloat(std::string param);
-		static void fromDouble(std::string param);
-		
-		static int	defineType(std::string param);
-		static void printValue(char valChar, int valInt, float valFloat, double valDouble);
-		static void printString();
+		static std::string toChar(double& val);
+		static std::string toInt(double& val);
+		static std::string toFloat(double& val);
 
 	public:
 		static void convert(std::string param);
