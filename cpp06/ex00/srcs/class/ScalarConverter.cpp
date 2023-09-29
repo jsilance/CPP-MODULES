@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:30:51 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/17 18:39:05 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:52:55 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,33 @@ ScalarConverter& ScalarConverter::operator=(ScalarConverter const & src)
 {
 	*this = src;
 	return (this);
+}
+
+void ScalarConverter::defineType(std::string param)
+{
+	int i = 0;
+	int digit = 0;
+	int letters = 0;
+	int dot = 0;
+	int isFloat = 0;
+
+	while (param[i])
+	{
+		if (isdigit(param[i]))
+			digit++;
+		else if (!isdigit(param[i]))
+		{
+			if (param[i] == 'f')
+				isFloat++;
+			letter++;
+		}
+		else if (param[i] == '.')
+			dot++;
+		i++;
+	}
+	if (isFloat == 1 && letter == 1 && dot < 2 && digit > 0)
+		this->type = FLOAT_TYPE;
+	else if (i == 1 && letter == 1)
 }
 
 void ScalarConverter::fromChar()

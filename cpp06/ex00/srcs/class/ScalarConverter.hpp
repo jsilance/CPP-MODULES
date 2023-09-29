@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 01:55:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/17 18:57:09 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:35:32 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class ScalarConverter
 		ScalarConverter& operator=(ScalarConverter const & src);
 
 		static void fromChar();
+		static void	defineType(std::string param);
 
 		static int type;
 
