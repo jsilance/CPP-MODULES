@@ -6,7 +6,7 @@ NAME		= ScallarConverter
 
 SRCS		= main.cpp
 
-CLASS		= Bureaucrat.cpp
+CLASS		= ScalarConverter.cpp
 
 # ============================================================================= #
 

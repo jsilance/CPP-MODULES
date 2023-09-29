@@ -6,11 +6,11 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 01:57:11 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/14 01:57:31 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/29 12:03:17 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "class/ScalarConverter.hpp"
 
 int	main(int argc, char **argv)
 {
@@ -20,9 +20,6 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 
-	ScalarConverter converter(argv[1]);
-
-	converter.convert();
-
+	ScalarConverter::convert(std::string(argv[1]));
 	return (0);
 }
