@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 01:55:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/09/29 20:09:41 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:28:58 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class ScalarConverter
 
 		static std::string toChar(double& val);
 		static std::string toInt(double& val);
-		static std::string toFloat(double& val);
+		static std::string toFloat(float val);
+		static std::string toDouble(double val);
 
 	public:
 		static void convert(std::string param);
