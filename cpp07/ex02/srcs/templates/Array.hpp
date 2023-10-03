@@ -6,12 +6,15 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 00:05:35 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/03 01:24:22 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:47:44 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
+
+# include <stdio.h>
+# include <iostream>
 
 template<typename T>
 class Array
@@ -43,9 +46,9 @@ class Array
 		}
 		T	&operator[](const int index) const
 		{
-			if (i < 0 || static_cast<size_t>(index) >= _size)
+			if (index < 0 || static_cast<size_t>(index) >= _size)
 				throw outOfRange();
-			return (_data[index])
+			return (_data[index]);
 		}
 
 		size_t	size() const
@@ -56,11 +59,11 @@ class Array
 		class outOfRange: public std::exception
 		{
 			public:
-				virtual cinst char *what() const throw()
+				virtual const char *what() const throw()
 				{
-					return ("Array::exception: index: out of range");
+					return ("Array::exception: index: Out of range");
 				}
-		}
+		};
 };
 
 #endif
