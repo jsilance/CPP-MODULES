@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 20:43:06 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/02 22:34:54 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/10/02 22:35:11 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/10/02 23:41:39 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-# define WHATEVER_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
-template<typename T> void swap(T& val1, T& val2)
+template<typename T> void iter(T *tab, size_t size, void f(T &))
 {
-	T tmp;
-
-	tmp = val2;
-	val2 = val1;
-	val1 = tmp;
+	for(size_t i = 0; i < size; i++)
+		f(tab[i]);
 }
 
-template<typename T> T min(const T& val1, const T& val2)
+template<typename T> void printValue(T &data)
 {
-	return ((val1 < val2) ? val1 : val2);
-}
-
-template<typename T> T max(const T& val1, const T& val2)
-{
-	return ((val1 > val2) ? val1 : val2);
+	std::cout << data << std::endl;
 }
 
 #endif
