@@ -13,6 +13,8 @@
 #ifndef ITER_HPP
 # define ITER_HPP
 
+#include <cstdlib>
+
 template<typename T, typename U> void iter(T *tab, size_t size, void f(U &))
 {
 	for(size_t i = 0; i < size; i++)
