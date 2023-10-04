@@ -38,8 +38,8 @@ class Array
 		{
 			if (this != &src)
 				delete [] _data;
-			_size = src.size;
-			_data = new T[src.size];
+			_size = src.size();
+			_data = new T[src.size()];
 			for (int i = 0; i < _size; i++)
 				_data[i] = src._data[i];
 			return (*this);
