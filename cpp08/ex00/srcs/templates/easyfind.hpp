@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:50:21 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/05 16:04:12 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:59:16 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,6 @@ template<typename T> typename T::const_iterator easyfind(T data, int val)
 	if (*it != val)
 		throw (notFoundVal());
 	return (it);
-	
-
-	// return ();
-	// std::cout << *it << "\n";
-	// for (T::iterator it = data.begin(); it != data.end(); ++it)
-		// if (it == val)
-			// return (it);
 }
 
 #endif
