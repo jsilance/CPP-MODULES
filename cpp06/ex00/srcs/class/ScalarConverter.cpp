@@ -71,7 +71,7 @@ std::string ScalarConverter::toFloat(float val)
 std::string ScalarConverter::toDouble(double val)
 {
 	if (std::isinf(val))
-		return ((val < 0) ? "-inff" : "+inff");
+		return ((val < 0) ? "-inf" : "+inf");
 	else if (std::isnan(val))
 		return ("nanf");
 	if (val < std::numeric_limits<double>::lowest() || val > std::numeric_limits<double>::max())
