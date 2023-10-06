@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutanStack.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 10:32:23 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/06 11:29:34 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/10/06 11:27:37 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/10/06 11:28:14 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "templates/MutanStack.hpp"
+#ifndef MUTANSTACK_HPP
+# define MUTANSTACK_HPP
 
-int main()
-{
-	return (0);
-}
+
+#endif
