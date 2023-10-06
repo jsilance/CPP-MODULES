@@ -6,7 +6,7 @@ NAME		= MutantStack
 
 SRCS		= main.cpp
 
-CLASS		= MutantStack.cpp
+CLASS		=
 
 # ============================================================================= #
 
