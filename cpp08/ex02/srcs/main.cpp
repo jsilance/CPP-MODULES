@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:32:23 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/06 18:53:36 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/07 00:37:54 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main()
 {
+	std::cout << "Test with MutantStack:" << std::endl;
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -38,10 +39,12 @@ int main()
 	}
 	std::stack<int> s(mstack);
 	
+
+	std::cout << std::endl << "Test with list:" << std::endl;
 	std::list<int> nstack;
 	nstack.push_back(5);
 	nstack.push_back(17);
-	std::cout << nstack.pop_back() << std::endl;
+	std::cout << nstack.back() << std::endl;
 	nstack.pop_back();
 	std::cout << nstack.size() << std::endl;
 	nstack.push_back(3);
@@ -49,15 +52,16 @@ int main()
 	nstack.push_back(737);
 	//[...]
 	nstack.push_back(0);
-	std::list<int>::iterator it = nstack.begin();
-	std::list<int>::iterator ite = nstack.end();
-	++it;
-	--it;
-	while (it != ite)
+	std::list<int>::iterator iti = nstack.begin();
+	std::list<int>::iterator itie = nstack.end();
+	++iti;
+	--iti;
+	while (iti != itie)
 	{
-		std::cout << *it << std::endl;
-		++it;
+		std::cout << *iti << std::endl;
+		++iti;
 	}
-	std::list<int> s(nstack);
-	return 0;
+	std::list<int> se(nstack);
+	
+	return (0);
 }
