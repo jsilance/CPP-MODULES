@@ -1,12 +1,12 @@
 # ============================================================================= #
                                                       
-NAME		= BTCExchange
+NAME		= btc
 
 # ============================================================================= #
 
 SRCS		= main.cpp
 
-CLASS		=
+CLASS		= BitcoinExchange.cpp
 
 # ============================================================================= #
 
@@ -28,7 +28,7 @@ LDFLAGS		=
 
 CC			= c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 
 RM			= rm -f
 
