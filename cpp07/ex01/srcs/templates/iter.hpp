@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:35:11 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/06 23:34:25 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/08 12:06:05 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 #include <cstdlib>
 
-template<typename T, typename U> void iter(T *tab, size_t size, void f(U &))
+template<typename T> void iter(T *tab, size_t size, void f(const T &))
 {
 	for(size_t i = 0; i < size; i++)
 		f(tab[i]);
 }
 
-template<typename T> void printValue(T &data)
+template<typename T> void printValue(const T &data)
 {
 	std::cout << data << std::endl;
 }
