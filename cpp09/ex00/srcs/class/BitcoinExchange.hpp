@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:57:23 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/19 02:53:12 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/20 01:35:46 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, std::string> _map;
+		std::map<int, std::string> _map;
 
 		BitcoinExchange(BitcoinExchange const & src);
 		BitcoinExchange &	operator=(BitcoinExchange const & rhs);
@@ -43,6 +43,8 @@ class BitcoinExchange
 		void		printResult(std::string line, int lineNb);
 
 		void		exchange(std::string line);
+		std::map<int, std::string>::iterator		findInMap(std::string date);
+		int			dateToInt(std::string date);
 
 		class NotPositiveException : public std::exception
 		{
@@ -56,10 +58,14 @@ class BitcoinExchange
 		class BadInputException : public std::exception
 		{
 			public:
+				BadInputException(const std::string& msg) : _str("Error: bad input => " + msg){}
+				~BadInputException(){}
 				virtual const char* what() const throw()
 				{
-					return ("Error: bad input");
+					return (_str.c_str());
 				}
+			private:
+				std::string _str;
 		};
 
 		class TooLargeException : public std::exception
@@ -67,7 +73,7 @@ class BitcoinExchange
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("Error: too large a number");
+					return ("Error: too large a number.");
 				}
 		};
 
@@ -76,7 +82,7 @@ class BitcoinExchange
 			public:
 				virtual const char* what() const throw()
 				{
-					return ("Error: bad format");
+					return ("Error: bad format.");
 				}
 		};
 };

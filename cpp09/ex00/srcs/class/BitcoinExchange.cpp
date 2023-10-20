@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:09:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/19 03:07:06 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/20 01:34:11 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void BitcoinExchange::printError(std::string line, int lineNb)
 
 void BitcoinExchange::printResult(std::string line, int lineNb)
 {
-	for (std::map<std::string, std::string>::iterator it = _map.begin(); it != _map.end(); it++)
+	for (std::map<int, std::string>::iterator it = _map.begin(); it != _map.end(); it++)
 		std::cout << it->first << " => " << it->second << '\n';
 }
 
@@ -66,24 +66,38 @@ void BitcoinExchange::lineVerifier(std::string str)
 	if (day[2] == ' ')
 		day[2] = '\0';
 
-	// std::cout << "date: " << date << '\n';
-	// std::cout << "value: " << value << '\n';
-	// std::cout << "year: " << year.size() << " month: " << month.size() << " day: |" << day.size() << "|\n";
-
 	if (year.size() != 4 || month.size() != 2 || (day.size() != 3 && day[2] == ' '))
 		throw FormatException();
 	if (year[0] != '2' || year[1] != '0')
-		throw BadInputException();
+		throw BadInputException(date);
 	if (month > "12" || month < "01")
-		throw BadInputException();
+		throw BadInputException(date);
 	if (day > "31" || day < "01")
-		throw BadInputException();
+		throw BadInputException(date);
 	if (atoi(year.c_str()) % 4 != 0 && month == "02" && day >= "29")
-		throw BadInputException();
+		throw BadInputException(date);
 	if (atof(value.c_str()) < 0)
 		throw NotPositiveException();
 	if(atof(value.c_str()) > 1000)
 		throw TooLargeException();
+}
+
+int BitcoinExchange::dateToInt(std::string str)
+{
+	int result = 0;
+
+	std::istringstream ss(str);
+	std::string year, month, day;
+
+	getline(ss, year, '-');
+	getline(ss, month, '-');
+	getline(ss, day);
+
+	result += atoi(year.c_str()) * 10000;
+	result += atoi(month.c_str()) * 100;
+	result += atoi(day.c_str());
+
+	return (result);
 }
 
 void BitcoinExchange::insertInMap(std::string line)
@@ -94,7 +108,25 @@ void BitcoinExchange::insertInMap(std::string line)
 	getline(ss, date, ',');
 	getline(ss, value);
 
-	_map.insert(std::pair<std::string, std::string>(date, value));
+	_map.insert(std::pair<int, std::string>(dateToInt(date), value));
+}
+
+std::map<int, std::string>::iterator BitcoinExchange::findInMap(std::string date)
+{
+	std::map<int, std::string>::iterator it = _map.begin();
+	std::map<int, std::string>::iterator ito = it;
+
+	int iDate = dateToInt(date);
+
+	for (it = _map.begin(); it != _map.end() && it->first <= iDate; it++)
+	{
+		if (it->first == iDate)
+			return (it);
+		if (it->first >= iDate)
+			break ;
+		ito = it;
+	}
+	return (ito);
 }
 
 void BitcoinExchange::exchange(std::string line)
@@ -109,13 +141,10 @@ void BitcoinExchange::exchange(std::string line)
 		getline(ss, date, '|');
 		getline(ss, value);
 
-		std::map<std::string, std::string>::iterator it = _map.find(date);
+		std::map<int, std::string>::iterator it = findInMap(date);
 
-		if (it == _map.end())
-			throw BadInputException();
-
-		std::cout << date << " => " << it->second.c_str() << " | " << value << '\n';
-		// std::cout << date << " => " << it->second * atof(value.c_str()) << '\n';
+		// std::cout << date << " => " << it->second.c_str() << " | " << value << '\n';
+		std::cout << date << "=>" << value << " = " << atof(it->second.c_str()) * atof(value.c_str()) << '\n';
 	}
 	catch(const std::exception& e)
 	{
