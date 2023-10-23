@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:42:15 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/22 20:19:46 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/23 02:04:21 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ template<typename T> void PmergeMe::_binaryInsertionSort(T begin, T end, int nbr
 	{
 		if (*middle >= nbr)
 		{
-			if (dynamic_cast<std::deque<int>::iterator> (begin))	
+			if (dynamic_cast<std::deque<int>::iterator> (begin))
 				this->_deq.insert(middle, nbr);
 			else if (dynamic_cast<std::vector<int>::iterator> (begin))
 				this->_vec.insert(middle, nbr);
