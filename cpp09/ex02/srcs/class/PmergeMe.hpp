@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:37:14 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/23 02:20:05 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/25 21:36:36 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,28 @@
 
 # include <deque>
 # include <vector>
+# include <iostream>
 
 class PmergeMe
 {
 	private:
-
 		std::deque<int>	_deq;
 		std::vector<int> _vec;
 	
-		PmergeMe();
 		PmergeMe(const PmergeMe & src);
 
 		PmergeMe & operator=(const PmergeMe & src);
-		template<typename T> void _merge(T begin, T, T end);
-		template<typename T> void _binaryInsertionSort(T begin, T end, int nbr);
+		template<typename T> void _merge(T begin, T end);
+		template<typename T> void _insertionSort(T begin, T end);
+		template<typename T> void _displayNumber(const T & container);
+		template<typename T> void _displayNumber(const T & begin, const T & end);
 	public:
+		PmergeMe();
 		~PmergeMe();
 
-		template<typename T> void diplayNumber(const T & container);
-		template<typename T> void mergeInsertSort(T & container);
+		void addNbr(int & nb);
+		void mergeInsertSort();
+		int sorterVerifier();
 };
 
 #endif

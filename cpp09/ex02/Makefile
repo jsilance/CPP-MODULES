@@ -1,12 +1,12 @@
 # ============================================================================= #
                                                       
-NAME		= RPN
+NAME		= PmergeMe
 
 # ============================================================================= #
 
 SRCS		= main.cpp
 
-CLASS		= RPN.cpp
+CLASS		= PmergeMe.cpp
 
 # ============================================================================= #
 
@@ -28,7 +28,7 @@ LDFLAGS		=
 
 CC			= c++
 
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g -g3 #-fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 -g -g3 -fsanitize=address
 
 RM			= rm -f
 

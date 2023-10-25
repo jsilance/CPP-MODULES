@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:57:23 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/20 01:35:46 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/25 23:19:48 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <iostream>
 # include <map>
-# include <vector>
 # include <cstdlib>
 # include <string>
 # include <fstream>
@@ -59,7 +58,7 @@ class BitcoinExchange
 		{
 			public:
 				BadInputException(const std::string& msg) : _str("Error: bad input => " + msg){}
-				~BadInputException(){}
+				~BadInputException() throw() {}
 				virtual const char* what() const throw()
 				{
 					return (_str.c_str());
