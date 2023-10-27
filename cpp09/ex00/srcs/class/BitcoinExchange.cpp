@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:09:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/20 01:34:11 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:48:51 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void BitcoinExchange::lineVerifier(std::string str)
 		throw BadInputException(date);
 	if (day > "31" || day < "01")
 		throw BadInputException(date);
-	if (atoi(year.c_str()) % 4 != 0 && month == "02" && day >= "29")
+	if (((atoi(year.c_str()) % 100 == 0 && atoi(year.c_str()) % 400 != 0) || atoi(year.c_str()) % 4 != 0) && month == "02" && day >= "29")
 		throw BadInputException(date);
 	if (atof(value.c_str()) < 0)
 		throw NotPositiveException();

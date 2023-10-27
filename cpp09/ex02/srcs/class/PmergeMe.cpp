@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:42:15 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/25 22:04:02 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:41:04 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,3 +133,4 @@ int PmergeMe::sorterVerifier(void)
 	}
 	return (0);
 }
+// add binary insertion search
