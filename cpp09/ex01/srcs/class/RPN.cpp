@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 03:33:39 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/20 04:42:01 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/28 15:55:05 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void RPN::_add(void)
 	_stack.pop();
 	int	b = _stack.top();
 	_stack.pop();
-	_stack.push(a + b);
+	_stack.push(b + a);
 }
 
 void RPN::_sub(void)
@@ -116,7 +116,7 @@ void RPN::_sub(void)
 	_stack.pop();
 	int	b = _stack.top();
 	_stack.pop();
-	_stack.push(a - b);
+	_stack.push(b - a);
 }
 
 void RPN::_mul(void)
@@ -127,7 +127,7 @@ void RPN::_mul(void)
 	_stack.pop();
 	int	b = _stack.top();
 	_stack.pop();
-	_stack.push(a * b);
+	_stack.push(b * a);
 }
 
 void RPN::_div()
@@ -140,5 +140,5 @@ void RPN::_div()
 	_stack.pop();
 	if (b == 0)
 		throw RPN::InvalidValueException();
-	_stack.push(a / b);
+	_stack.push(b / a);
 }
