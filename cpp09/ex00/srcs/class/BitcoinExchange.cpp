@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:09:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/27 16:48:51 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:34:43 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void BitcoinExchange::lineVerifier(std::string str)
 	std::getline(ss, date, '|');
 	std::getline(ss, value);
 		
-	ss = std::istringstream(date);
+	std::istringstream ss1(date);
 
-	getline(ss, year, '-');
-	getline(ss, month, '-');
-	getline(ss, day);
+	getline(ss1, year, '-');
+	getline(ss1, month, '-');
+	getline(ss1, day);
 
 	if (day[2] == ' ')
 		day[2] = '\0';
