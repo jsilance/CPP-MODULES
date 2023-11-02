@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:42:15 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/28 06:12:16 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:40:57 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe()
+PmergeMe::PmergeMe(): _solo(-1)
 {
 }
 
@@ -139,13 +139,13 @@ template<typename T> void PmergeMe::_insertionSort(T & deq)
 			_binSearch(deq.begin() + _pairs.size() - k + 1, deq.end(), _pairs[_pairs.size() - k].second);
 		k--;
 	}
-	if (this->_solo)
+	if (this->_solo != -1)
 		_binSearch(deq.begin(), deq.end(), _solo);
 }
 
 void PmergeMe::mergeInsertSort()
 {
-	_solo = 0;
+	_solo = -1;
 	
 	std::cout << "Before: ";
 	_displayNumber(_deq);
@@ -159,7 +159,7 @@ void PmergeMe::mergeInsertSort()
 	_displayNumber(_deq);
 
 	_pairs.clear();
-	_solo = 0;
+	_solo = -1;
 
 	// std::cout << "Before: ";
 	// _displayNumber(_vec);
