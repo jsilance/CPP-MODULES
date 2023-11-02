@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 03:33:39 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/28 15:55:05 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:56:34 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void RPN::_div()
 	_stack.pop();
 	int	b = _stack.top();
 	_stack.pop();
-	if (b == 0)
+	if (a == 0)
 		throw RPN::InvalidValueException();
 	_stack.push(b / a);
 }
