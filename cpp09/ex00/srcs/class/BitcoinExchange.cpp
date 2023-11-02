@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:09:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/10/28 16:34:43 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:22:52 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,8 @@ std::map<int, std::string>::iterator BitcoinExchange::findInMap(std::string date
 
 	int iDate = dateToInt(date);
 
+	if (it->first > iDate)
+		throw BadInputException(date);
 	for (it = _map.begin(); it != _map.end() && it->first <= iDate; it++)
 	{
 		if (it->first == iDate)
@@ -133,7 +135,6 @@ void BitcoinExchange::exchange(std::string line)
 {
 	try
 	{
-		// std::cout << "line: " << line << '\n';
 		lineVerifier(line);
 		std::istringstream ss(line);
 		std::string date, value;
@@ -143,7 +144,6 @@ void BitcoinExchange::exchange(std::string line)
 
 		std::map<int, std::string>::iterator it = findInMap(date);
 
-		// std::cout << date << " => " << it->second.c_str() << " | " << value << '\n';
 		std::cout << date << "=>" << value << " = " << atof(it->second.c_str()) * atof(value.c_str()) << '\n';
 	}
 	catch(const std::exception& e)
