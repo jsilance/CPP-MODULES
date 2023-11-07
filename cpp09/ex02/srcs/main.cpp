@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:30:53 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/11/02 17:23:51 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:42:24 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	for (int i = 1; i < argc; i++)
 	{
 		j = 0;
-		if (std::strlen(argv[i]) > 10 || std::strlen(argv[i]) == 0 || std::strcmp(argv[i], "2147483647") > 0)
+		if ((std::strlen(argv[i]) >= 10 && std::strcmp(argv[i], "2147483647") > 0) || std::strlen(argv[i]) == 0)
 		{
 			std::cout << "Error\n";
 			return (1);
