@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:09:34 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/11/12 17:11:05 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:20:54 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ void BitcoinExchange::lineVerifier(std::string str)
 		throw BadInputException(date);
 	if (((atoi(year.c_str()) % 100 == 0 && atoi(year.c_str()) % 400 != 0) || atoi(year.c_str()) % 4 != 0) && month == "02" && day >= "29")
 		throw BadInputException(date);
-	if (day > max_day[atoi(month.c_str())] || day < "01")
+	// std::cerr << "month = " << (atoi(day.c_str()) > atoi(max_day[atoi(month.c_str())].c_str())) << '\n';
+	if (atoi(day.c_str()) > atoi(max_day[atoi(month.c_str())].c_str()) || day < "01")
 		throw BadInputException(date);
 	if (atof(value.c_str()) < 0)
 		throw NotPositiveException();
