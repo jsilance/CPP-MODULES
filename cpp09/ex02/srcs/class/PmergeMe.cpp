@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@s19.be>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:42:15 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/11/02 17:40:57 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:32:52 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,16 +161,12 @@ void PmergeMe::mergeInsertSort()
 	_pairs.clear();
 	_solo = -1;
 
-	// std::cout << "Before: ";
-	// _displayNumber(_vec);
 	clock_t startv = std::clock();
 
 	_merge(_vec);
 	_insertionSort(_vec);
 	
 	clock_t endv = std::clock();
-	// std::cout << "After: ";
-	// _displayNumber(_vec);
 
 	std::cout << "Time to process a range of	" << this->_deq.size() << " elements whit std::deque<int> : " << endd - startd << " us" << std::endl;
 	std::cout << "Time to process a range of	" << this->_vec.size() << " elements whit std::vector<int> : " << endv - startv << " us" << std::endl;
